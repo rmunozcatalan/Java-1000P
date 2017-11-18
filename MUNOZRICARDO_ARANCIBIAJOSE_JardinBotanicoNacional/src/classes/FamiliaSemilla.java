@@ -33,4 +33,9 @@ public class FamiliaSemilla {
         this.descripcion = descripcion;
     }
 
+    @Override
+    public String toString() {
+        return "FamiliaSemilla{" + "codigo=" + codigo + ", descripcion=" + descripcion + '}';
+    }
+
 }

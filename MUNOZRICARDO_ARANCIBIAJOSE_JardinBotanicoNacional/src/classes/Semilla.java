@@ -1,4 +1,5 @@
 package classes;
+
 /**
  * @author Ricardo Munoz
  * @author Jose Arancibia
@@ -84,8 +85,17 @@ public class Semilla {
 
     @Override
     public String toString() {
-        return "Semilla{" + "codigo=" + codigo + ", nombreCientifico=" + nombreCientifico + ", familiaSemilla=" + oFamiliaSemilla.getDescripcion() + ", nombreComun=" + nombreComun + ", numero=" + numero + ", origen=" + origen + ", precio=" + precio + '}';
+        try {
+            return "Semilla{" + "codigo=" + codigo
+                    + ", nombreCientifico=" + nombreCientifico
+                    + ", familiaSemilla=" + oFamiliaSemilla.getDescripcion()
+                    + ", nombreComun=" + nombreComun
+                    + ", numero=" + numero
+                    + ", origen=" + origen
+                    + ", precio=" + precio + '}';
+        } catch (Exception e) {
+            return e.toString();
+        }
     }
 
-    
 }
