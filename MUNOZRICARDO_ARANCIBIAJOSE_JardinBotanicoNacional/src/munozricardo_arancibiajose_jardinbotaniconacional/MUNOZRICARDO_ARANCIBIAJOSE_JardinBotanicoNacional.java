@@ -26,32 +26,37 @@ public class MUNOZRICARDO_ARANCIBIAJOSE_JardinBotanicoNacional {
         Semilla Aextoxicon_punctatum = addSemilla("Aextoxicon punctatum", Aextoxicaceae, "Olivillo", 1, "Chile y Argentina", 1600);
         Semillas.add(Aextoxicon_punctatum);
 
-        int opcion = 1;
-
         //menu
+        Scanner oScannerMenu = new Scanner(System.in);
+        int opcionMenu = 1;
+
         do {
-            switch (opcion) {
+
+            menu();
+            System.out.print("Ingrese una opción válida:");
+            opcionMenu = oScannerMenu.nextInt();
+
+            switch (opcionMenu) {
 
                 case 1:
                     Semilla oSemilla = ingresaSemilla();
                     Semillas.add(oSemilla);
-                    opcion = 2 ; 
+//                    opcionMenu = 2 ; 
                     break;
                 case 2:
                     mostrarListado(Semillas);
-                    opcion = 5 ; 
+//                    opcionMenu = 5 ; 
                     break;
                 case 5:
+                    salirAplicacion();
                     break;
                 default:
-                    System.out.println("Opciones validas");
-                    System.out.println("1: ingresar semilla");
-                    System.out.println("2: mostrar listado de semillas");
-                    System.out.println("5: salir");
+                    System.out.print("Debe ingresar una opción válida: 1 , 2 o 5 ");
+                    break;
 
             }
 
-        } while (opcion != 5);
+        } while (opcionMenu != 5);
 
     }
 
@@ -75,10 +80,10 @@ public class MUNOZRICARDO_ARANCIBIAJOSE_JardinBotanicoNacional {
         Semilla oNewSemilla = new Semilla();
         int iCodigoFamiliaSemillaAux = 1;
 
-        System.out.println("SEMILLA  ");
+        System.out.println("INGRESE SEMILLA  ");
         System.out.println("Ingrese datos de un nuevo registro  ");
 
-        System.out.print("Ingrese el nombre cientifico de la semilla:  ");
+        System.out.print("Ingrese el nombre cientifico de la semilla (Puede tener espacios):  ");
         oNewSemilla.setNombreCientifico(oScanner.nextLine());
 
         // test listar Objeto FamiliaSemilla basico
@@ -93,10 +98,10 @@ public class MUNOZRICARDO_ARANCIBIAJOSE_JardinBotanicoNacional {
             oNewSemilla.setFamiliaSemilla(Aextoxicaceae);
         }
 
-        System.out.print("Ingrese el nombre comun de la semilla:  ");
+        System.out.print("Ingrese el nombre comun de la semilla (Sin espacios):   ");
         oNewSemilla.setNombreComun(oScanner.next());
 
-        System.out.print("Ingrese el numero de la semilla:  ");
+        System.out.print("Ingrese el número de la semilla:  ");
         oNewSemilla.setNumero(oScanner.nextInt());
 
         System.out.print("Ingrese el precio de la semilla:  ");
@@ -114,8 +119,8 @@ public class MUNOZRICARDO_ARANCIBIAJOSE_JardinBotanicoNacional {
     }
 
     // falta una 2da variable para el tipo de dato a mostrar
-    private static void mostrarListado(List Listado /* Clase */ ) {
-
+    private static void mostrarListado(List Listado /* Clase */) {
+        System.out.println("MOSTRAR LISTADO DE SEMILLAS");
         // test listar Objeto Semilla List
         Iterator iterador = Listado.iterator();
 
@@ -124,5 +129,18 @@ public class MUNOZRICARDO_ARANCIBIAJOSE_JardinBotanicoNacional {
             Semilla elemento = (Semilla) iterador.next();
             System.out.println(elemento + " ");
         }
+    }
+
+    private static void salirAplicacion() {
+        System.out.println("Muchas gracias por usar nuestro sistema");
+        System.out.println("Ricardo Muñoz");
+        System.out.println("José Arancibia");
+    }
+
+    private static void menu() {
+        System.out.println("Opciones validas");
+        System.out.println("1: ingresar semilla");
+        System.out.println("2: mostrar listado de semillas");
+        System.out.println("5: salir");
     }
 }
