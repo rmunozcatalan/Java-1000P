@@ -12,9 +12,9 @@ package classes;
  */
 public abstract class Semilla {
 
-    private int codigo;
-    private String nombre;
-    private int precio;
+    protected int codigo;
+    protected String nombre;
+    protected int precio;
 
     public Semilla(int codigo, String nombre, int precio) {
         this.codigo = codigo;
@@ -50,5 +50,7 @@ public abstract class Semilla {
     public String toString() {
         return "Semilla{" + "codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + '}';
     }
+
+    
 
 }

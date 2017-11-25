@@ -14,7 +14,7 @@ import java.util.*;
 
 public class Inventario {
 
-    List<Semilla> semillas = new ArrayList<Semilla>();
+    private List<Semilla> semillas = new ArrayList<Semilla>();
 
     public boolean agregar(Semilla semilla) {
         boolean bAgregar = false;
@@ -33,7 +33,7 @@ public class Inventario {
 
         return sListar;
     }
-    
+
     public boolean busar(int codigo) {
         boolean bBuscar = false;
 
