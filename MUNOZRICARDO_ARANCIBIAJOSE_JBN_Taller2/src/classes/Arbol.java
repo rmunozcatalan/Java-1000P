@@ -32,4 +32,14 @@ public class Arbol extends Semilla {
         return super.toString() + "Arbol{" + "alturaMaxima=" + alturaMaxima + '}';
     }
 
+    @Override
+    public double calcularPrecioOferta() {
+        double dCalcularPrecioOferta = 0.0;
+
+        if (this.alturaMaxima > 180) {
+            dCalcularPrecioOferta = this.precio * DESC_ARBOL;
+        }
+
+        return dCalcularPrecioOferta;
+    }
 }

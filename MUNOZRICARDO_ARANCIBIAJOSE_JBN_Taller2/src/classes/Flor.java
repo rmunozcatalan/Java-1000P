@@ -32,4 +32,15 @@ public class Flor extends Semilla {
         return super.toString() + "Flor{" + "color=" + color + '}';
     }
 
+    @Override
+    public double calcularPrecioOferta() {
+        double dCalcularPrecioOferta = 0.0;
+
+        if (!this.color.equals("red")) {
+            dCalcularPrecioOferta = this.precio * DESC_FLOR;
+        }
+
+        return dCalcularPrecioOferta;
+    }
+
 }

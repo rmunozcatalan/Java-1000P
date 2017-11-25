@@ -5,12 +5,14 @@
  */
 package classes;
 
+import interfaces.Vendible;
+
 /**
  *
  * @author ricardo.munoz
  * @author jose.arancibia
  */
-public abstract class Semilla {
+public abstract class Semilla  implements Vendible{
 
     protected int codigo;
     protected String nombre;
@@ -49,6 +51,11 @@ public abstract class Semilla {
     @Override
     public String toString() {
         return "Semilla{" + "codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + '}';
+    }
+
+    @Override
+    public double calcularPrecioOferta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
