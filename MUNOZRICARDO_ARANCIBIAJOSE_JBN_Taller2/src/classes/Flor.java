@@ -37,7 +37,7 @@ public class Flor extends Semilla {
         double dCalcularPrecioOferta = 0.0;
 
         if (!this.color.equals("red")) {
-            dCalcularPrecioOferta = this.precio * DESC_FLOR;
+            dCalcularPrecioOferta = this.precio + (this.precio * DESC_FLOR);
         }
 
         return dCalcularPrecioOferta;

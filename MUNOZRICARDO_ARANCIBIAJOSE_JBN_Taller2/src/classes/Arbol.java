@@ -37,7 +37,7 @@ public class Arbol extends Semilla {
         double dCalcularPrecioOferta = 0.0;
 
         if (this.alturaMaxima > 180) {
-            dCalcularPrecioOferta = this.precio * DESC_ARBOL;
+            dCalcularPrecioOferta = this.precio + (this.precio * DESC_ARBOL);
         }
 
         return dCalcularPrecioOferta;

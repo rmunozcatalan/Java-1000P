@@ -29,19 +29,15 @@ public class Inventario {
     }
 
     public boolean eliminar(int codigo) {
-        System.out.println("ELIMINAR");
+//        System.out.println("ELIMINAR");
         boolean bEliminar = false;
 
         try {
-
-            System.out.println("semillas.size() " + semillas.size());
             for (int i = 0; i < semillas.size(); i++) {
-
-                    semillas.get(i).toString();
-//                if (semillas.get(i).getCodigo().equals(codigo)) {
-//                    semillas.remove(i);
-//                    bEliminar = true;
-//                }
+                if (semillas.get(i).getCodigo() == codigo) {
+                    semillas.remove(i);
+                    bEliminar = true;
+                }
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.toString());
@@ -51,7 +47,6 @@ public class Inventario {
     }
 
     public String listar() {
-        System.out.println("LISTAR");
         String sListar = "";
 
         for (Semilla semilla : semillas) {
@@ -62,9 +57,14 @@ public class Inventario {
     }
 
     public boolean buscar(int codigo) {
-        System.out.println("BUSCAR");
+//        System.out.println("BUSCAR");
         boolean bBuscar = false;
 
+        for (int i = 0; i < semillas.size(); i++) {
+            if (semillas.get(i).getCodigo() == codigo) {
+                bBuscar = true;
+            }
+        }
         return bBuscar;
     }
 }
