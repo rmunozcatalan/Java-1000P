@@ -46,7 +46,7 @@ public class ArbolView {
             System.out.println(" El precio de la semilla debe ser mayor a 0.");
             System.out.print("Ingrese el precio de la árbol: ");
             precioArbol = oScannerIngresarArbol.nextInt();
-        } while (precioArbol > 0);
+        } while (precioArbol < 0);
 
         Arbol oArbol = new Arbol(alturaArbol, codigoArbol, nombreArbol, precioArbol);
 

@@ -10,54 +10,52 @@ import classes.Semilla;
  */
 public class MUNOZRICARDO_ARANCIBIAJOSE_JardinBotanicoNacional {
 
-    public static int cantidadSemillas = 1;
+    public static int cantidadSemillas = 0;
 
     public static void main(String[] args) {
+        //        List Semillas = new LinkedList();
+        //        List Semillas = new LinkedList();
 
-        List Semillas = new LinkedList();
+        List<Semilla> Semillas = new ArrayList<>();
 
         //Carga 
         FamiliaSemilla Fabaceae = new FamiliaSemilla(1, "Fabaceae");
         FamiliaSemilla Aextoxicaceae = new FamiliaSemilla(2, "Aextoxicaceae");
 
         Semilla Acacia_caven = addSemilla("Acacia caven", Fabaceae, "Espino", 1, "Chile, Bolivia, Argentina, Uruguay, Paraguay, sur de Brasil", 1000);
-        Semillas.add(Acacia_caven);
+
+        Semillas.add(1, Acacia_caven);
 
         Semilla Aextoxicon_punctatum = addSemilla("Aextoxicon punctatum", Aextoxicaceae, "Olivillo", 1, "Chile y Argentina", 1600);
-        Semillas.add(Aextoxicon_punctatum);
 
-        //menu
-        Scanner oScannerMenu = new Scanner(System.in);
-        int opcionMenu = 1;
-
-        do {
-
-            menu();
-            System.out.print("Ingrese una opción válida:");
-            opcionMenu = oScannerMenu.nextInt();
-
-            switch (opcionMenu) {
-
-                case 1:
-                    Semilla oSemilla = ingresaSemilla();
-                    Semillas.add(oSemilla);
-//                    opcionMenu = 2 ; 
-                    break;
-                case 2:
-                    mostrarListado(Semillas);
-//                    opcionMenu = 5 ; 
-                    break;
-                case 5:
-                    salirAplicacion();
-                    break;
-                default:
-                    System.out.print("Debe ingresar una opción válida: 1 , 2 o 5 ");
-                    break;
-
-            }
-
-        } while (opcionMenu != 5);
-
+        Semillas.add(2, Aextoxicon_punctatum);
+        
+        for( int i = 0 ; i < Semillas.size() ; i++){
+            System.out.println("Semillas.get(i).getCodigo() "+ Semillas.get(i).getCodigo());
+        }
+        /**
+         *
+         * //menu Scanner oScannerMenu = new Scanner(System.in); int opcionMenu
+         * = 1;
+         *
+         * do {
+         *
+         * menu(); System.out.print("Ingrese una opción válida:"); opcionMenu =
+         * oScannerMenu.nextInt();
+         *
+         * switch (opcionMenu) {
+         *
+         * case 1: Semilla oSemilla = ingresaSemilla(); Semillas.add(oSemilla);
+         * // opcionMenu = 2 ; break; case 2: mostrarListado(Semillas); //
+         * opcionMenu = 5 ; break; case 5: salirAplicacion(); break; default:
+         * System.out.print("Debe ingresar una opción válida: 1 , 2 o 5 ");
+         * break;
+         *
+         * }
+         *
+         * } while (opcionMenu != 5);
+         *
+         */
     }
 
     /**
