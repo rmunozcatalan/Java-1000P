@@ -743,7 +743,7 @@ public class GUIProducto extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         System.out.println("Listar");
-        String sDetalle = "";
+        String sDetalle;
 
         for (int i = 0; i < 10; i++) {
             tblProductos.setValueAt("", i, 0);
@@ -1026,6 +1026,61 @@ public class GUIProducto extends javax.swing.JFrame {
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i).getCodigo() == Integer.parseInt(txtCodigoBuscarEditar.getText())) {
                 System.out.println("Encontrado para editar");
+
+                txtNombreEditar.setText(
+                        productos.get(i).getNombre()
+                );
+                txtPrecioEditar.setText(
+                        productos.get(i).getPrecio() + ""
+                );
+
+                if ((Producto) productos.get(i) instanceof Complemento) {
+
+                    lblCantidadComplementoEditar.setEnabled(true);
+                    txtCantidadComplementoEditar.setEnabled(true);
+                    pnlComplementoEditar.setEnabled(true);
+
+                    pnlMedicamentoEditar.setEnabled(false);
+                    rbtBioEquivalenteEditar.setEnabled(false);
+                    rbtNoBioEquivalenteEditar.setEnabled(false);
+                    txtMedicamentoBioEquivalenteEditar.setEnabled(false);
+
+                    rbtMedicamentoEditar.setSelected(false);
+                    rbtComplementoEditar.setSelected(true);
+                    txtCantidadComplementoEditar.setText(
+                            ((Complemento) productos.get(i)).getCantidadComponentes() + ""
+                    );
+                    txtTipoProductoEditar.setText(
+                            "Complemento"
+                    );
+                }
+                if ((Producto) productos.get(i) instanceof Medicamento) {
+
+                    lblCantidadComplementoEditar.setEnabled(false);
+                    txtCantidadComplementoEditar.setEnabled(false);
+                    pnlComplementoEditar.setEnabled(false);
+
+                    pnlMedicamentoEditar.setEnabled(true);
+                    rbtBioEquivalenteEditar.setEnabled(true);
+                    rbtNoBioEquivalenteEditar.setEnabled(true);
+                    txtMedicamentoBioEquivalenteEditar.setEnabled(true);
+
+                    rbtMedicamentoEditar.setSelected(true);
+                    rbtComplementoEditar.setSelected(false);
+                    if (((Medicamento) productos.get(i)).isBioequivalente()) {
+                        txtMedicamentoBioEquivalenteEditar.setText("Bioequivalente");
+                        rbtBioEquivalenteEditar.setSelected(true);
+                        rbtNoBioEquivalenteEditar.setSelected(false);
+                    } else {
+                        txtMedicamentoBioEquivalenteEditar.setText("No Bioequivalente");
+                        rbtBioEquivalenteEditar.setSelected(false);
+                        rbtNoBioEquivalenteEditar.setSelected(true);
+                    }
+
+                    txtTipoProductoEditar.setText(
+                            "Medicamento"
+                    );
+                }
 
             }
         }
