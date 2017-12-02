@@ -15,6 +15,6 @@ public interface Vendible {
     double DESC_BIOEQUIVALENTE = 0.8;
     double DESC_COMPLEMENTO = 0.25;
 
-    double CalcularPrecioOferta();
+    double calcularPrecioOferta();
 
 }

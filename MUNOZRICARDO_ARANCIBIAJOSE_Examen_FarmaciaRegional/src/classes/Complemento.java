@@ -35,7 +35,7 @@ public class Complemento extends Producto {
     }
 
     @Override
-    public double CalcularPrecioOferta() {
+    public double calcularPrecioOferta() {
         return this.getPrecio() * DESC_COMPLEMENTO;
     }
 

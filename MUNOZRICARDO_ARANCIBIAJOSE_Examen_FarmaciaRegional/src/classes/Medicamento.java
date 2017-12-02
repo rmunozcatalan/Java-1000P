@@ -36,7 +36,7 @@ public class Medicamento extends Producto {
     }
 
     @Override
-    public double CalcularPrecioOferta() {
+    public double calcularPrecioOferta() {
         return this.getPrecio() * DESC_BIOEQUIVALENTE;
     }
 
