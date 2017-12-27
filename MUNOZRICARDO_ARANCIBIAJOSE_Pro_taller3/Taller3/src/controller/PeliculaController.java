@@ -41,7 +41,7 @@ public class PeliculaController {
     //buscar Película por código
     public Pelicula buscarPeliculaPorCodigo(int codigo) {
         Pelicula pelicula = new Pelicula();
-        pelicula.setCodigo(0);
+//        pelicula.setCodigo(0);
         try {
             
             Conexion conexionOracle = new Conexion();
