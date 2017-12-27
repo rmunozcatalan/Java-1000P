@@ -1,4 +1,4 @@
-
+SELECT * from rm_ja_pelicula;
 
 DROP TABLE rm_ja_pelicula;
 
