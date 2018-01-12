@@ -5,7 +5,7 @@
  */
 package controlador;
 
-import bd.Conexion;
+import bd.ConexionMYSQL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,7 +25,7 @@ public class RegistroPeliculaCategoria {
         public ArrayList<PeliculaCategoria> buscarPeliculaPorCategoriaNombre(String nombre) {
         ArrayList<PeliculaCategoria> listaPelicula = new ArrayList<PeliculaCategoria>();
         try {
-            Conexion cnx = new Conexion();
+            ConexionMYSQL cnx = new ConexionMYSQL();
             Connection coneccion = cnx.obtenerConexion();
 
             String sql = "SELECT p.codigo, p.nombre, p.formato4K, c.descripcion, p.precio, c.id FROM peliculas AS p, categoria AS c "
@@ -66,7 +66,7 @@ public class RegistroPeliculaCategoria {
         public ArrayList<PeliculaCategoria> buscarPeliculaPorNombre(String nombre) {
         ArrayList<PeliculaCategoria> listaPelicula = new ArrayList<PeliculaCategoria>();
         try {
-            Conexion cnx = new Conexion();
+            ConexionMYSQL cnx = new ConexionMYSQL();
             Connection coneccion = cnx.obtenerConexion();
 
             String sql = "SELECT p.codigo, p.nombre, p.formato4K, c.descripcion, p.precio, c.id FROM peliculas AS p, categoria AS c "
@@ -107,7 +107,7 @@ public class RegistroPeliculaCategoria {
     public PeliculaCategoria buscarPeliculaPorCodigo(int codigo) {
         PeliculaCategoria pelicula = new PeliculaCategoria();
         try {
-            Conexion cnx = new Conexion();
+            ConexionMYSQL cnx = new ConexionMYSQL();
             Connection coneccion = cnx.obtenerConexion();
 
             String sql = "SELECT p.codigo, p.nombre, p.formato4K, c.descripcion, p.precio, c.id FROM pelicula AS p, categoria AS c WHERE p.id_categoria = c.id AND p.codigo=?;";
@@ -140,7 +140,7 @@ public class RegistroPeliculaCategoria {
     public ArrayList<PeliculaCategoria> buscarTodasPelicula() {
         ArrayList<PeliculaCategoria> listaPelicula = new ArrayList<PeliculaCategoria>();
         try {
-            Conexion cnx = new Conexion();
+            ConexionMYSQL cnx = new ConexionMYSQL();
             Connection coneccion = cnx.obtenerConexion();
 
             String sql = "SELECT p.codigo, p.nombre, p.formato4K, c.descripcion, p.precio, c.id FROM pelicula AS p, categoria AS c WHERE p.id_categoria = c.id  order by p.NOMBRE ASC";

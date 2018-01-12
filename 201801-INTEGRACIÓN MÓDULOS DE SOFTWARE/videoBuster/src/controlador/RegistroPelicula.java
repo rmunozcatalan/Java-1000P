@@ -5,7 +5,7 @@
  */
 package controlador;
 
-import bd.Conexion;
+import bd.ConexionMYSQL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +22,7 @@ public class RegistroPelicula {
     //agregar Película
     public boolean agregarPelicula(Pelicula nuevaPelicula) {
         try {
-            Conexion cnx = new Conexion();
+            ConexionMYSQL cnx = new ConexionMYSQL();
             Connection coneccion = cnx.obtenerConexion();
 
             String sql = "INSERT INTO PELICULAS(CODIGO,PRECIO,FORMATO4K,NOMBRE,ID_CATEGORIA) VALUES(?,?,?,?,?)";
@@ -51,7 +51,7 @@ public class RegistroPelicula {
     //actualizar Película
     public boolean actualizarPelicula(Pelicula modificaPelicula) {
         try {
-            Conexion cnx = new Conexion();
+            ConexionMYSQL cnx = new ConexionMYSQL();
             Connection coneccion = cnx.obtenerConexion();
 
             String sql = "UPDATE PELICULAS SET PRECIO=?,FORMATO4K=?,NOMBRE=?,ID_CATEGORIA=? WHERE CODIGO = ?";
@@ -79,7 +79,7 @@ public class RegistroPelicula {
     //eliminar Película
     public boolean eliminarPelicula(int codigo) {
         try {
-            Conexion cnx = new Conexion();
+            ConexionMYSQL cnx = new ConexionMYSQL();
             Connection coneccion = cnx.obtenerConexion();
 
             String sql = "DELETE FROM PELICULA WHERE codigo = ?";
@@ -104,7 +104,7 @@ public class RegistroPelicula {
     public Pelicula buscarPeliculaPorCodigo(int codigo) {
         Pelicula pelicula = new Pelicula();
         try {
-            Conexion cnx = new Conexion();
+            ConexionMYSQL cnx = new ConexionMYSQL();
             Connection coneccion = cnx.obtenerConexion();
 
             String sql = "SELECT * FROM PELICULA WHERE codigo = ?";
@@ -136,7 +136,7 @@ public class RegistroPelicula {
     public ArrayList<Pelicula> buscarTodosPelicula() {
         ArrayList<Pelicula> listaPelicula = new ArrayList<Pelicula>();
         try {
-            Conexion cnx = new Conexion();
+            ConexionMYSQL cnx = new ConexionMYSQL();
             Connection coneccion = cnx.obtenerConexion();
 
             String sql = "SELECT * FROM PELICULA order by NOMBRE ASC";

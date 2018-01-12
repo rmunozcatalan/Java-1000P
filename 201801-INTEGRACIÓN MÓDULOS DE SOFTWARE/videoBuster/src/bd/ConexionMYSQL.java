@@ -13,7 +13,7 @@ import java.sql.DriverManager;
  *
  * @author vina
  */
-public class Conexion {
+public class ConexionMYSQL {
     public Connection obtenerConexion() {
         Connection connection = null;
         
