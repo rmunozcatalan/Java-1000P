@@ -74,19 +74,14 @@ public class Categoria {
         }
         return true;
     }
-    
-    public void grabar(Categoria c)
-    {
-              RegistroCategoria rc = new RegistroCategoria();
-        if (rc.agregarCategoria(c))
-        {
-                System.out.println("Se grabó correctamente la categoria");
+
+    public void grabar(Categoria c) {
+        RegistroCategoria rc = new RegistroCategoria();
+        if (rc.agregarCategoria(c)) {
+            System.out.println("Se grabó correctamente la categoria");
+        } else {
+            System.out.println("Error en la grabación de la categoría");
         }
-        else
-        {
-                System.out.println("Error en la grabación de la categoría");
-        }         
     }
-    
 
 }

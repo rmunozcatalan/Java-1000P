@@ -5,27 +5,24 @@
  */
 package modelo;
 
-import modelo.Categoria;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Ignore;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author vina
  */
-public class CategoriaIT {
+public class CategoriaTest {
     
-    public CategoriaIT() {
+    public CategoriaTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-        
     }
     
     @AfterClass
@@ -34,19 +31,16 @@ public class CategoriaIT {
     
     @Before
     public void setUp() {
-        System.out.println("Iniciando caso de prueba ...");
     }
     
     @After
     public void tearDown() {
-        System.out.println("Caso de prueba finalizado ...");
     }
 
     /**
      * Test of getId method, of class Categoria.
      */
     @Test
-    @Ignore
     public void testGetId() {
         System.out.println("getId");
         Categoria instance = new Categoria();
@@ -61,21 +55,20 @@ public class CategoriaIT {
      * Test of setId method, of class Categoria.
      */
     @Test
-    @Ignore
     public void testSetId() {
         System.out.println("setId");
-        int id = 0;
+        int id = 1;
         Categoria instance = new Categoria();
         instance.setId(id);
+        instance.setDescripcion("uno");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+//        fail("The test case is a prototype.");
     }
 
     /**
      * Test of getDescripcion method, of class Categoria.
      */
     @Test
-    @Ignore
     public void testGetDescripcion() {
         System.out.println("getDescripcion");
         Categoria instance = new Categoria();
@@ -90,7 +83,6 @@ public class CategoriaIT {
      * Test of setDescripcion method, of class Categoria.
      */
     @Test
-    @Ignore
     public void testSetDescripcion() {
         System.out.println("setDescripcion");
         String descripcion = "";
@@ -104,7 +96,6 @@ public class CategoriaIT {
      * Test of toString method, of class Categoria.
      */
     @Test
-    @Ignore
     public void testToString() {
         System.out.println("toString");
         Categoria instance = new Categoria();
@@ -119,7 +110,6 @@ public class CategoriaIT {
      * Test of hashCode method, of class Categoria.
      */
     @Test
-    @Ignore
     public void testHashCode() {
         System.out.println("hashCode");
         Categoria instance = new Categoria();
@@ -134,7 +124,6 @@ public class CategoriaIT {
      * Test of equals method, of class Categoria.
      */
     @Test
-    @Ignore
     public void testEquals() {
         System.out.println("equals");
         Object obj = null;
@@ -143,20 +132,20 @@ public class CategoriaIT {
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a   prototype.");
+        fail("The test case is a prototype.");
     }
-    
+
+    /**
+     * Test of grabar method, of class Categoria.
+     */
     @Test
-    public void testGrabar()
-    {
-         System.out.println("Grabar Categoria");
-         Categoria c = new Categoria();
-         c.setId(5);
-         c.setDescripcion("Terror");
-         c.grabar(c);
-        
-       
+    public void testGrabar() {
+        System.out.println("grabar");
+        Categoria c = null;
+        Categoria instance = new Categoria();
+        instance.grabar(c);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
-    
     
 }

@@ -5,7 +5,8 @@
  */
 package controlador;
 
-import bd.ConexionMYSQL;
+//import bd.ConexionORACLE;
+import bd.ConexionORACLE;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,8 +25,9 @@ public class RegistroCategoria {
     public ArrayList<Categoria> buscarTodasCategorias() {
         ArrayList<Categoria> listaCategoria = new ArrayList<Categoria>();
         try {
-            ConexionMYSQL cnx = new ConexionMYSQL();
-            Connection coneccion = cnx.obtenerConexion();
+            ConexionORACLE cnx = new ConexionORACLE(); 
+            cnx.conectar(); 
+            Connection coneccion = cnx.getConnection();
 
             String sql = "SELECT * FROM CATEGORIA order by DESCRIPCION ASC";
             PreparedStatement stmt = coneccion.prepareStatement(sql);
@@ -54,8 +56,8 @@ public class RegistroCategoria {
     //agregar Película
     public boolean agregarCategoria(Categoria nuevaCategoria) {
         try {
-            ConexionMYSQL cnx = new ConexionMYSQL();
-            Connection coneccion = cnx.obtenerConexion();
+            ConexionORACLE cnx = new ConexionORACLE();
+            Connection coneccion = cnx.getConnection();
 
             String sql = "INSERT INTO CATEGORIA(ID,DESCRIPCION) VALUES(?,?)";
             PreparedStatement stmt = coneccion.prepareStatement(sql);

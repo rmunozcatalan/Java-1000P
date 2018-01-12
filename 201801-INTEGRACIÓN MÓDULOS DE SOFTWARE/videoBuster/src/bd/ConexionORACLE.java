@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import oracle.jdbc.driver.OracleDriver;
 
 public class ConexionORACLE {
@@ -46,7 +47,7 @@ public class ConexionORACLE {
 
     /**
      * @param args the command line arguments
-     */
+     * / 
     public static void main(String[] args) {
 
         ConexionORACLE conexionOracle = new ConexionORACLE();
@@ -80,4 +81,5 @@ public class ConexionORACLE {
             Logger.getLogger(ConexionORACLE.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    * */
 }

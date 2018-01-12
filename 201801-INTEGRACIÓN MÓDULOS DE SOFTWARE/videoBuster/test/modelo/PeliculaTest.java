@@ -11,15 +11,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Ignore;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author vina
  */
-public class PeliculaIT {
+public class PeliculaTest {
     
-    public PeliculaIT() {
+    public PeliculaTest() {
     }
     
     @BeforeClass
@@ -32,19 +31,16 @@ public class PeliculaIT {
     
     @Before
     public void setUp() {
-        System.out.println("Iniciando caso de prueba ...");
     }
     
     @After
     public void tearDown() {
-        System.out.println("Caso de prueba finalizado ...");
     }
 
     /**
      * Test of getCodigo method, of class Pelicula.
      */
     @Test
-    @Ignore
     public void testGetCodigo() {
         System.out.println("getCodigo");
         Pelicula instance = new Pelicula();
@@ -59,7 +55,6 @@ public class PeliculaIT {
      * Test of setCodigo method, of class Pelicula.
      */
     @Test
-    @Ignore
     public void testSetCodigo() {
         System.out.println("setCodigo");
         int codigo = 0;
@@ -73,7 +68,6 @@ public class PeliculaIT {
      * Test of getPrecio method, of class Pelicula.
      */
     @Test
-    @Ignore
     public void testGetPrecio() {
         System.out.println("getPrecio");
         Pelicula instance = new Pelicula();
@@ -88,7 +82,6 @@ public class PeliculaIT {
      * Test of setPrecio method, of class Pelicula.
      */
     @Test
-    @Ignore
     public void testSetPrecio() {
         System.out.println("setPrecio");
         int precio = 0;
@@ -102,7 +95,6 @@ public class PeliculaIT {
      * Test of getId_categoria method, of class Pelicula.
      */
     @Test
-    @Ignore
     public void testGetId_categoria() {
         System.out.println("getId_categoria");
         Pelicula instance = new Pelicula();
@@ -117,7 +109,6 @@ public class PeliculaIT {
      * Test of setId_categoria method, of class Pelicula.
      */
     @Test
-    @Ignore
     public void testSetId_categoria() {
         System.out.println("setId_categoria");
         int id_categoria = 0;
@@ -131,7 +122,6 @@ public class PeliculaIT {
      * Test of getFormato4k method, of class Pelicula.
      */
     @Test
-    @Ignore
     public void testGetFormato4k() {
         System.out.println("getFormato4k");
         Pelicula instance = new Pelicula();
@@ -146,7 +136,6 @@ public class PeliculaIT {
      * Test of setFormato4k method, of class Pelicula.
      */
     @Test
-    @Ignore
     public void testSetFormato4k() {
         System.out.println("setFormato4k");
         String formato4k = "";
@@ -160,7 +149,6 @@ public class PeliculaIT {
      * Test of getNombre method, of class Pelicula.
      */
     @Test
-    @Ignore
     public void testGetNombre() {
         System.out.println("getNombre");
         Pelicula instance = new Pelicula();
@@ -175,7 +163,6 @@ public class PeliculaIT {
      * Test of setNombre method, of class Pelicula.
      */
     @Test
-    @Ignore
     public void testSetNombre() {
         System.out.println("setNombre");
         String nombre = "";
@@ -184,39 +171,31 @@ public class PeliculaIT {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
-        
+
+    /**
+     * Test of grabar method, of class Pelicula.
+     */
     @Test
-    
-    public void testGrabar()
-    {
-         System.out.println("Grabar Película");
-         Pelicula p  = new Pelicula();
-         p.setCodigo(10015);
-         p.setFormato4k("N");
-         p.setId_categoria(5);
-         p.setNombre("Freddy I");
-         p.setPrecio(1000);
-         p.grabar(p);
-        
-       
+    public void testGrabar() {
+        System.out.println("grabar");
+        Pelicula p = null;
+        Pelicula instance = new Pelicula();
+        instance.grabar(p);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of actualizar method, of class Pelicula.
+     */
+    @Test
+    public void testActualizar() {
+        System.out.println("actualizar");
+        Pelicula p = null;
+        Pelicula instance = new Pelicula();
+        instance.actualizar(p);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
-    
-      
-    @Test
-    @Ignore
-    public void testActualizar()
-    {
-         System.out.println("Actualizar Película");
-         Pelicula p  = new Pelicula();
-         p.setCodigo(10000);
-         p.setFormato4k("N");
-         p.setId_categoria(5);
-         p.setNombre("Spiderman");
-         p.setPrecio(1000);
-         p.actualizar(p);
-        
-       
-    }
 }

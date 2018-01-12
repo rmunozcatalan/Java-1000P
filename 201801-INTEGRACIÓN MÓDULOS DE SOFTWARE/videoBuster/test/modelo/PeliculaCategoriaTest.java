@@ -11,15 +11,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Ignore;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author vina
  */
-public class PeliculaCategoriaIT {
+public class PeliculaCategoriaTest {
     
-    public PeliculaCategoriaIT() {
+    public PeliculaCategoriaTest() {
     }
     
     @BeforeClass
@@ -30,20 +29,18 @@ public class PeliculaCategoriaIT {
     public static void tearDownClass() {
     }
     
-     @Before
+    @Before
     public void setUp() {
-        System.out.println("Iniciando caso de prueba ...");
     }
     
     @After
     public void tearDown() {
-        System.out.println("Caso de prueba finalizado ...");
     }
+
     /**
      * Test of getId method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testGetId() {
         System.out.println("getId");
         PeliculaCategoria instance = new PeliculaCategoria();
@@ -58,7 +55,6 @@ public class PeliculaCategoriaIT {
      * Test of setId method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testSetId() {
         System.out.println("setId");
         int id = 0;
@@ -72,7 +68,6 @@ public class PeliculaCategoriaIT {
      * Test of getCodigo method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testGetCodigo() {
         System.out.println("getCodigo");
         PeliculaCategoria instance = new PeliculaCategoria();
@@ -87,7 +82,6 @@ public class PeliculaCategoriaIT {
      * Test of setCodigo method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testSetCodigo() {
         System.out.println("setCodigo");
         int codigo = 0;
@@ -101,7 +95,6 @@ public class PeliculaCategoriaIT {
      * Test of getPrecio method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testGetPrecio() {
         System.out.println("getPrecio");
         PeliculaCategoria instance = new PeliculaCategoria();
@@ -116,7 +109,6 @@ public class PeliculaCategoriaIT {
      * Test of setPrecio method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testSetPrecio() {
         System.out.println("setPrecio");
         int precio = 0;
@@ -130,7 +122,6 @@ public class PeliculaCategoriaIT {
      * Test of getFormato4k method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testGetFormato4k() {
         System.out.println("getFormato4k");
         PeliculaCategoria instance = new PeliculaCategoria();
@@ -145,7 +136,6 @@ public class PeliculaCategoriaIT {
      * Test of setFormato4k method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testSetFormato4k() {
         System.out.println("setFormato4k");
         String formato4k = "";
@@ -159,7 +149,6 @@ public class PeliculaCategoriaIT {
      * Test of getNombre method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testGetNombre() {
         System.out.println("getNombre");
         PeliculaCategoria instance = new PeliculaCategoria();
@@ -174,7 +163,6 @@ public class PeliculaCategoriaIT {
      * Test of setNombre method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testSetNombre() {
         System.out.println("setNombre");
         String nombre = "";
@@ -188,7 +176,6 @@ public class PeliculaCategoriaIT {
      * Test of getCategoria method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testGetCategoria() {
         System.out.println("getCategoria");
         PeliculaCategoria instance = new PeliculaCategoria();
@@ -203,7 +190,6 @@ public class PeliculaCategoriaIT {
      * Test of setCategoria method, of class PeliculaCategoria.
      */
     @Test
-    @Ignore
     public void testSetCategoria() {
         System.out.println("setCategoria");
         String categoria = "";
@@ -212,27 +198,31 @@ public class PeliculaCategoriaIT {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
-    
+
+    /**
+     * Test of buscarPeliculaPorNombre method, of class PeliculaCategoria.
+     */
     @Test
-    @Ignore
-    public void buscarporNombre()
-    {
-    
-        System.out.println("Buscando película por nombre");
-        PeliculaCategoria pc = new PeliculaCategoria();        
-        pc.buscarPeliculaPorNombre("Rocky");
-    
+    public void testBuscarPeliculaPorNombre() {
+        System.out.println("buscarPeliculaPorNombre");
+        String nombre = "";
+        PeliculaCategoria instance = new PeliculaCategoria();
+        instance.buscarPeliculaPorNombre(nombre);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of buscarPeliculaPorCategoriaNombre method, of class PeliculaCategoria.
+     */
+    @Test
+    public void testBuscarPeliculaPorCategoriaNombre() {
+        System.out.println("buscarPeliculaPorCategoriaNombre");
+        String nombre = "";
+        PeliculaCategoria instance = new PeliculaCategoria();
+        instance.buscarPeliculaPorCategoriaNombre(nombre);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
-        @Test
-        
-    public void buscarporCategoriaNombre()
-    {
-    
-        System.out.println("Buscando película por categoría nombre");
-        PeliculaCategoria pc = new PeliculaCategoria();        
-        pc.buscarPeliculaPorCategoriaNombre("Terror");
-    
-    }
 }
